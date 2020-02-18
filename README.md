@@ -338,4 +338,44 @@ Expected equality of these values:
  1 FAILED TEST
 ```
 
-Woohoo, it failed exactly the say it was supposed to! I'll leave it to you to add the code to `utils.cc` to implement this function, or you can find my solution in the repo here.
+Woohoo, it failed exactly the say it was supposed to! I'll leave it to you to add the code to `utils.cc` to implement this function, or you can find my solution in this repo.
+
+# Step 7: Crypto++
+
+Now we have a function implemented and tested, great. We can't add it to main yet, because we can't yet parse user input. Sure, we could write our own function for that, but why not use the ones in Crypto++? Conan makes it easy for us to find and use a dependency like this. First, search for the package using `conan search "crypto*" --remote all`. You should see something like:
+
+```
+Existing package recipes:
+
+Remote 'conan-center':
+cryptopp/5.6.5@bincrafters/stable
+cryptopp/7.0.0@bincrafters/stable
+cryptopp/8.2.0@bincrafters/stable
+```
+
+Looks like the only package available is from the bincrafters channel. Let's add that to conanfile.txt. It should look like:
+
+```conan
+[requires]
+gtest/1.10.0
+cryptopp/8.2.0@bincrafters/stable
+
+[generators]
+cmake
+```
+
+Now run conan again and rebuild. From you build folder:
+
+```bash
+conan install ..
+make
+```
+
+You should see Conan go out and get Crypto++ and then your project build. Congratulations! You now have Crypto++ ready to use in your project, all you have to do is call it from your code. Here are some steps from here:
+
+1. Add functions to utils to convert strings in hex to byte arrays and vice versa
+2. Add unit tests for those function (or better yet: write empty functions, then unit tests, then the implementations)
+3. Add code to main to take user input on either the command line or standard input, calculate the xor, and output
+
+You can take those as an exercise, or look at the code in the repo for my solution.
+
