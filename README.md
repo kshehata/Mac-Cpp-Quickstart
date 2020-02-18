@@ -1,4 +1,4 @@
-# C++ on Mac OS X Quickstart Guide
+# C++ on Mac OS X (or other platforms) Quickstart Guide
 
 This guide will show you how to quickly set up a modern C++ development environment on Mac OS X. The goals here are:
 
@@ -17,6 +17,10 @@ The good news is that all of this is possible with very little effort on Mac, wi
 * [Crypto++](https://www.cryptopp.com/) as an example dependency library
 
 The sample code here will just read in two strings containing long hex numbers and calculate the xor of them. It uses Crypto++ for decoding and encoding the strings, mainly to demonstrate how to use a separate library. It'll also show how to use googletest for unit tests.
+
+# Mac vs Other Platforms
+
+After writing this, I've realized that this setup _should_ work on pretty much all platforms. The only thing that's platform-specific is the installation of the dev tools, CMake, and Conan. If you install those three (easy on Linux, should be doable on Windows with Microsoft's Visual Studios or some other C++ compiler available), then Step 3 onwards is the same.
 
 # Assumptions
 
