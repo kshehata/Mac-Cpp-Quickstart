@@ -82,7 +82,7 @@ Ok, so now you have all of the tools installed, lets get the most basic program 
 
 ```cmake
 cmake_minimum_required(VERSION 3.1.0 FATAL_ERROR)
-project("C++ Example")
+project("C++ Quickstart")
 
 SET(CMAKE_CXX_STANDARD 14)
 
