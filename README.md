@@ -1,5 +1,23 @@
 # C++ on Mac OS X (or other platforms) Quickstart Guide
 
+# Contents
+
+1.  [Motivation](#motivation)
+2.  [Mac vs Other Platforms](#mac-vs-other-platforms)
+3.  [Assumptions](#assumptions)
+4.  [Step 0: Install the Developer Tools](#step-0-install-the-developer-tools)
+5.  [Step 1: Install CMake](#step-1-install-cmake)
+6.  [Step 2: Install Conan.io](#step-2-install-conanio)
+7.  [Step 3: Hello World](#step-3-hello-world)
+8.  [Step 4: Library Skeleton](#step-4-library-skeleton)
+9.  [Step 5: Add googletest](#step-5-add-googletest)
+10. [Step 6: Unit Test](#step-6-unit-test)
+11. [Step 7: Crypto++](#step-7-crypto)
+12. [Resources](#resources)
+13. [Final Thoughts](#final-thoughts)
+
+# Motivation
+
 This guide will show you how to quickly set up a modern C++ development environment on Mac OS X. The goals here are:
 
 * Quick and simple setup for most cases
