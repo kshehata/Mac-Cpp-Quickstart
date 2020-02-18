@@ -42,7 +42,7 @@ After writing this, I've realized that this setup _should_ work on pretty much a
 
 ## Assumptions
 
-This guide will show you how to set up a C++ development environment, and assumes that you're at least somewhat development with software development and the command line. It won't show you how to write C++ code or use the command line.
+This guide will show you how to set up a C++ development environment, and assumes that you're at least somewhat used to software development and the command line. It won't show you how to write C++ code or use the command line.
 
 ## Step 0: Install the Developer Tools
 
