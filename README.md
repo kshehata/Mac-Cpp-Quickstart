@@ -70,7 +70,7 @@ As mentioned in the previous section, the other option is to use homebrew to ins
 
 Conan should be as easy to install as `pip install conan`. You can also install Conan from Homebrew if you prefer.
 
-If you don't have pip installed (I think it might come with Xcode, but I'm not sure). You can follow [pypi's instructions](https://pip.pypa.io/en/stable/installing/). It used to be as easy as `sudo easy_install pip` but that might not work in the future.
+If you don't have already pip installed (try running `pip` from the command line to be sure), you can follow [pypi's instructions](https://pip.pypa.io/en/stable/installing/). It used to be as easy as `sudo easy_install pip` which is what I did and might still work, but that method is deprecated and might stop working in the near future.
 
 ## Step 3: Hello World
 
