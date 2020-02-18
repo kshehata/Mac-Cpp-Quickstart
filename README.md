@@ -1,6 +1,6 @@
 # C++ on Mac OS X (or other platforms) Quickstart Guide
 
-# Contents
+## Contents
 
 1.  [Motivation](#motivation)
 2.  [Mac vs Other Platforms](#mac-vs-other-platforms)
@@ -16,7 +16,7 @@
 12. [Resources](#resources)
 13. [Final Thoughts](#final-thoughts)
 
-# Motivation
+## Motivation
 
 This guide will show you how to quickly set up a modern C++ development environment on Mac OS X. The goals here are:
 
@@ -36,21 +36,21 @@ The good news is that all of this is possible with very little effort on Mac, wi
 
 The sample code here will just read in two strings containing long hex numbers and calculate the xor of them. It uses Crypto++ for decoding and encoding the strings, mainly to demonstrate how to use a separate library. It'll also show how to use googletest for unit tests.
 
-# Mac vs Other Platforms
+## Mac vs Other Platforms
 
 After writing this, I've realized that this setup _should_ work on pretty much all platforms. The only thing that's platform-specific is the installation of the dev tools, CMake, and Conan. If you install those three (easy on Linux, should be doable on Windows with Microsoft's Visual Studios or some other C++ compiler available), then Step 3 onwards is the same.
 
-# Assumptions
+## Assumptions
 
 This guide will show you how to set up a C++ development environment, and assumes that you're at least somewhat development with software development and the command line. It won't show you how to write C++ code or use the command line.
 
-# Step 0: Install the Developer Tools
+## Step 0: Install the Developer Tools
 
 As a prerequisite, you'll need Apple's developer tools or some form of developer tools. There's a thousand sites out there that list how to do, so I'll just point you to [Google](https://www.google.com/search?q=mac+developer+tools+install).
 
 Alternatively, you can install all of the developer tools using [Homebrew](https://brew.sh/). Again, there are a tonne of guides out there on how to do that, and since the goal of this guide is the simplest possible setup I'm not going to cover that. Homebrew does have the benefit of being able to then install cmake, conan, and other tools easily if you choose that route. I'll leave that to you to decide.
 
-# Step 1: Install CMake
+## Step 1: Install CMake
 
 Kitware has very conveniently packaged CMake as a binary just like any Mac app. Just go to their [download page](https://cmake.org/download/), grab the binary, and drag it to your Applications folder. You can then use the GUI or command-line version as you'd like.
 
@@ -66,13 +66,13 @@ You can also add that folder to your bash `PATH` variable in `.bash_profile` if 
 
 As mentioned in the previous section, the other option is to use homebrew to install cmake. If you use homebrew you won't need to deal with the path issue, as they should already be in your path.
 
-# Step 2: Install Conan.io
+## Step 2: Install Conan.io
 
 Conan should be as easy to install as `pip install conan`. You can also install Conan from Homebrew if you prefer.
 
 If you don't have pip installed (I think it might come with Xcode, but I'm not sure). You can follow [pypi's instructions](https://pip.pypa.io/en/stable/installing/). It used to be as easy as `sudo easy_install pip` but that might not work in the future.
 
-# Step 3: Hello World
+## Step 3: Hello World
 
 Ok, so now you have all of the tools installed, lets get the most basic program possible running. We'll write a simple CMake configuration, a Hello World, and then build and run it. I suggest starting by making a folder called for your sources, such as:
 
@@ -124,7 +124,7 @@ Pretty simple so far, right? A few quick notes:
 * If you change the name of the executable you'll obviously need to run it with your name and not "example"
 * You can simply delete the build folder if you want to start again, or make a different build folder for a different build type
 
-# Step 4: Library Skeleton
+## Step 4: Library Skeleton
 
 You'll want the vast majority of your code to be in a library to make it easier to test and avoid recompiling it across targets. Let's create a simple library and write a simple unit test.
 
@@ -168,7 +168,7 @@ void xor_blocks(const byte_array& b1, const byte_array& b2, byte_array& out) {}
 
 Go back to the build folder and run `make` again. This time you should see it build libutils.
 
-# Step 5: Add googletest
+## Step 5: Add googletest
 
 Let's follow TDD and build a unit test for our library before we write the implementation. But there's one catch: we don't have googletest yet. We could download the source and include it in our project, but this is exactly why installed Conan, and as you'll see Conan will make this _very_ easy. [Conan's docs](https://docs.conan.io/) are pretty extensive and easy to read, so head there if you'd like any more details on what I've got here.
 
@@ -233,7 +233,7 @@ make
 
 You should see Conan download and set up gtest, and then cmake and make execute the build.
 
-# Step 6: Unit Test
+## Step 6: Unit Test
 
 Now that we have gtest, let's use it! First, add an executable for the unit test to your `CMakeLists.txt` with the following two sections:
 
@@ -362,7 +362,7 @@ Expected equality of these values:
 
 Woohoo, it failed exactly the say it was supposed to! I'll leave it to you to add the code to `utils.cc` to implement this function, or you can find my solution in this repo.
 
-# Step 7: Crypto++
+## Step 7: Crypto++
 
 Now we have a function implemented and tested, great. We can't add it to main yet, because we can't yet parse user input. Sure, we could write our own function for that, but why not use the ones in Crypto++? Conan makes it easy for us to find and use a dependency like this. First, search for the package using `conan search "crypto*" --remote all`. You should see something like:
 
@@ -401,7 +401,7 @@ You should see Conan go out and get Crypto++ and then your project build. Congra
 
 You can take those as an exercise, or look at the code in the repo for my solution.
 
-# Resources
+## Resources
 
 There are many resources out there you can use. I'll share a few here that I've found useful:
 
@@ -411,7 +411,7 @@ There are many resources out there you can use. I'll share a few here that I've 
 * [Crypto++ Wiki](https://www.cryptopp.com/wiki) (for details on Crypto++)
 * [John Lamp's CMake Tutorial](https://www.johnlamp.net/cmake-tutorial.html) is still a good reference. It broke on me when it came to gtest, which motivated figuring out Conan, but otherwise provides good examples of how to do things in CMake
 
-# Final Thoughts
+## Final Thoughts
 
 If you've made it this far, hopefully that means that you have a C++ project that uses Crypto++, has unit tests, and builds cleanly in most environments. This is a great starting point for your own development. A few suggestions on next steps:
 
