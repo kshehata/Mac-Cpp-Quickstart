@@ -383,6 +383,16 @@ You should see Conan go out and get Crypto++ and then your project build. Congra
 
 You can take those as an exercise, or look at the code in the repo for my solution.
 
+# Resources
+
+There are many resources out there you can use. I'll share a few here that I've found useful:
+
+* [An Introduction to Modern CMake](https://cliutils.gitlab.io/modern-cmake/)
+* [Conan's Getting Started Guide](https://docs.conan.io/en/latest/getting_started.html)
+* [Enabling C++11 and later in CMake](https://crascit.com/2015/03/28/enabling-cxx11-in-cmake/
+* [Crypto++ Wiki](https://www.cryptopp.com/wiki) (for details on Crypto++)
+* [John Lamp's CMake Tutorial](https://www.johnlamp.net/cmake-tutorial.html) is still a good reference. It broke on me when it came to gtest, which motivated figuring out Conan, but otherwise provides good examples of how to do things in CMake
+
 # Final Thoughts
 
 If you've made it this far, hopefully that means that you have a C++ project that uses Crypto++, has unit tests, and builds cleanly in most environments. This is a great starting point for your own development. A few suggestions on next steps:
