@@ -379,3 +379,14 @@ You should see Conan go out and get Crypto++ and then your project build. Congra
 
 You can take those as an exercise, or look at the code in the repo for my solution.
 
+# Final Thoughts
+
+If you've made it this far, hopefully that means that you have a C++ project that uses Crypto++, has unit tests, and builds cleanly in most environments. This is a great starting point for your own development. A few suggestions on next steps:
+
+* You're probably already using git and github, but if not I'd suggest putting even your toy code in it. You never know when you'll need to figure out what you did to make something work.
+* You can have CMake generate for your preferred IDE, whether that's Xcode, Sublime Text, Eclipse, or something else. I'd highly recommend using an editor that works for you rather than what other people say is best.
+* I've heard good things about Bazel but haven't used it yet. Conan can also work with Bazel and it would probably be just as easy as CMake. If you do use it, please let me know how it works out for you.
+* I've avoided Homebrew here as I didn't want to have yet another dependency, but I know lots of people use it. If you use this setup with Homebrew, please let me know. I'd love to hear how it works out and if these instructions work.
+* Finally, the code generated here should work on all platforms not just Mac OS X. Only the installation instructions for CMake would be different, the rest is actually the same. If you have access to another platform, please try it out and let me know how it works out.
+
+Thanks and happy coding!
