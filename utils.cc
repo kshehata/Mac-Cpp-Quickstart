@@ -1,3 +1,8 @@
+//
+//  Copyright © 2020 Kareem Shehata. All rights reserved.
+//
+//  Implementation of crypto-related utility functions using Crypto++.
+
 #include "utils.h"
 
 #include <cryptopp/hex.h>

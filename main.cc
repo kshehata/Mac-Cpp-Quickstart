@@ -1,3 +1,9 @@
+//
+//  Copyright © 2020 Kareem Shehata. All rights reserved.
+//
+//  Demonstration of using utility function to calculate xor of two numbers
+//  given by the user via command line.
+
 #include "utils.h"
 #include <iostream>
 
@@ -17,16 +23,20 @@ int main(int argc, const char * argv[]) {
     return 1;
   }
 
+  // parse both input strings
   auto b1 = hex2bytes(argv[1]);
   auto b2 = hex2bytes(argv[2]);
 
+  // check that input lengths are usable
   if (b1.size() != b2.size()) {
     usage(argv[0]);
     return 2;
   }
 
+  // calculate the xor
   xor_blocks(b1, b2, b1);
 
+  // output the string to the user on stdout
   cout << bytes2hex(b1) << endl;
   return 0;
 }
